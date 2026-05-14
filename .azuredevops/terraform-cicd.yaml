@@ -1,0 +1,59 @@
+parameters:
+  - name: configs
+    displayName: Environment Configs (tfvars)?
+    type: object
+    default:
+      - connectivity
+      - app-web-dev
+      - app-web-tst
+      - app-web-prd
+      - app-usertools-dev
+      - app-usertools-tst
+      - app-usertools-prd
+      - app-data-dev
+      - app-data-tst
+      - app-data-prd
+      - app-storage-tst
+      - app-storage-prd
+      - app-sharedservices-tst
+      - app-sharedservices-prd
+      - app-mgmt-tst
+      - app-mgmt-prd
+      - app-citrix-prd
+      - cloud-production
+
+  - name: plan_only
+    displayName: Plan Only?
+    type: string
+    default: Yes
+    values:
+      - Yes
+      - No
+
+  - name: destroy
+    displayName: Destroy?
+    type: boolean
+    default: false
+
+# No automatic triggers, manual runs per subscription must be done
+trigger: none
+
+variables:
+  - group: terraform-secrets
+  - group: terraform-common
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: SS-IaC-Management/terraform-pipelines-azure
+      ref: "refs/heads/main"
+
+extends:
+  template: terraform-cicd.yaml@templates
+  parameters:
+    policy_branch_name: main
+    destroy: ${{ parameters.destroy }}
+    configs: ${{ parameters.configs }}
+    plan_only: ${{ parameters.plan_only }}
+    subscription_based_deployment: Yes

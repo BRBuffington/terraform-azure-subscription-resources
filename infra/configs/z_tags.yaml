@@ -1,0 +1,6 @@
+tag_groups:
+  - name: Acme Tags
+    tags:
+      - name: DeploymentMethod
+        value:
+          default: Terraform
