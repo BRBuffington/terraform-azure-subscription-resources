@@ -1,4 +1,4 @@
-subscription_id = "ba59ea46-bf0c-41de-9f19-568a1986568a" # GI-MDM-Data-PRD
+subscription_id = "00000000-0000-0000-0000-000000000000" # GI-MDM-Data-PRD
 
 vnets = {
   # ADF
@@ -188,8 +188,8 @@ vnets = {
 #### Monitoring Additions
 ##-------------------------------------
 azure_provider_monitoringstore = {
-  tenant_id              = "53f3dc0a-512f-4399-817d-c4a55242d086"
-  subscription_id        = "ba59ea46-bf0c-41de-9f19-568a1986568a" # GI-MDM-Data-PRD
+  tenant_id              = "00000000-0000-0000-0000-000000000000"
+  subscription_id        = "00000000-0000-0000-0000-000000000000" # GI-MDM-Data-PRD
   region_alias           = "eus2"
   region                 = "eastus2"
   environment_type_alias = "prd"
@@ -202,9 +202,9 @@ monitoring = {
   monitor_activity_log_alert = {
     mala01 = {
       #mala_name           = "vm" #(Optional)This is a custom name that can append the dynamic Alert Rule Name
-      resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with SubscriptionResources composition - IT-MGMT-PRD workspace
+      resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with SubscriptionResources composition - app-mgmt-prd workspace
       scopes = [
-        "/subscriptions/ba59ea46-bf0c-41de-9f19-568a1986568a" # GI-MDM-Data-PRD
+        "/subscriptions/00000000-0000-0000-0000-000000000000" # GI-MDM-Data-PRD
         #Single Resource example below.
         #"/subscriptions/0ddd144b-76dd-4289-bd12-############/resourceGroups/rg-azmonprd-sb-eus2/providers/Microsoft.Compute/virtualMachines/vm-azmonprdw01-sb-eus2"
       ]
@@ -233,7 +233,7 @@ monitoring = {
 
       action = {
         action_group = {
-          id = "/subscriptions/d952b48a-3183-48cf-8a23-8c6f7f5a302f/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
         }
       }
       tags = {
@@ -245,9 +245,9 @@ monitoring = {
     }
     mala02 = {
       #mala_name           = "db" #(Optional)This is a custom name that can append the dynamic Alert Rule Name
-      resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with SubscriptionResources composition - IT-MGMT-PRD workspace
+      resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with SubscriptionResources composition - app-mgmt-prd workspace
       scopes = [
-        "/subscriptions/ba59ea46-bf0c-41de-9f19-568a1986568a" # GI-MDM-Data-PRD
+        "/subscriptions/00000000-0000-0000-0000-000000000000" # GI-MDM-Data-PRD
         #Single Resource example below.
         #"/subscriptions/0ddd144b-76dd-4289-bd12-############/resourceGroups/rg-azmonprd-sb-eus2/providers/Microsoft.Sql/servers/databases/db01"
       ]
@@ -276,7 +276,7 @@ monitoring = {
 
       action = {
         action_group = {
-          id = "/subscriptions/d952b48a-3183-48cf-8a23-8c6f7f5a302f/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
         }
       }
       tags = {
@@ -288,9 +288,9 @@ monitoring = {
     }
     mala03 = {
       mala_name           = "law"              #(Optional)This is a custom name that can append the dynamic Alert Rule Name
-      resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with SubscriptionResources composition - IT-MGMT-PRD workspace
+      resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with SubscriptionResources composition - app-mgmt-prd workspace
       scopes = [
-        "/subscriptions/ba59ea46-bf0c-41de-9f19-568a1986568a" # GI-MDM-Data-PRD
+        "/subscriptions/00000000-0000-0000-0000-000000000000" # GI-MDM-Data-PRD
         #Example for single resource below
         #"/subscriptions/0ddd144b-76dd-4289-bd12-############/resourceGroups/rg-azmonprd-sb-eus2/providers/Microsoft.OperationalInsights/workspaces/law01"
       ]
@@ -319,7 +319,7 @@ monitoring = {
 
       action = {
         action_group = {
-          id = "/subscriptions/d952b48a-3183-48cf-8a23-8c6f7f5a302f/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
         }
       }
       tags = {
@@ -331,9 +331,9 @@ monitoring = {
     }
     mala04 = {
       #mala_name           = "sa" #(Optional)This is a custom name that can append the dynamic Alert Rule Name
-      resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with SubscriptionResources composition - IT-MGMT-PRD workspace
+      resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with SubscriptionResources composition - app-mgmt-prd workspace
       scopes = [
-        "/subscriptions/ba59ea46-bf0c-41de-9f19-568a1986568a" # GI-MDM-Data-PRD
+        "/subscriptions/00000000-0000-0000-0000-000000000000" # GI-MDM-Data-PRD
       ]
       description = "This alert will monitor resource health of all storage accounts in target subscription."
 
@@ -360,7 +360,7 @@ monitoring = {
 
       action = {
         action_group = {
-          id = "/subscriptions/d952b48a-3183-48cf-8a23-8c6f7f5a302f/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
         }
       }
       tags = {
@@ -374,7 +374,7 @@ monitoring = {
   monitor_metric_alert = {
     mma01 = {
       #mma_name                 = "vm" #(Optional)This is a custom name that can append the dynamic Alert Rule Name
-      resource_group_name      = "rg-inframon-eus2" #Pre-Req deployed with SubscriptionResources composition - IT-MGMT-PRD workspace
+      resource_group_name      = "rg-inframon-eus2" #Pre-Req deployed with SubscriptionResources composition - app-mgmt-prd workspace
       auto_mitigate            = true
       enabled                  = true
       frequency                = "PT5M"
@@ -383,7 +383,7 @@ monitoring = {
       target_resource_type     = "Microsoft.Compute/virtualmachines"
       target_resource_location = "East US 2"
       scopes = [
-        "/subscriptions/ba59ea46-bf0c-41de-9f19-568a1986568a" # GI-MDM-Data-PRD
+        "/subscriptions/00000000-0000-0000-0000-000000000000" # GI-MDM-Data-PRD
       ]
       description = "Action will be triggered when Percent CPU average is greater than 95 on VMs in target scope."
 
@@ -403,7 +403,7 @@ monitoring = {
 
       action = {
         action_group = {
-          id = "/subscriptions/d952b48a-3183-48cf-8a23-8c6f7f5a302f/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-metricalerts-prd-eus2"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-metricalerts-prd-eus2"
         }
       }
       tags = {
@@ -424,7 +424,7 @@ monitoring = {
       target_resource_type     = "Microsoft.Sql/servers/databases"
       target_resource_location = "East US 2"
       scopes = [
-        "/subscriptions/ba59ea46-bf0c-41de-9f19-568a1986568a" # GI-MDM-Data-PRD
+        "/subscriptions/00000000-0000-0000-0000-000000000000" # GI-MDM-Data-PRD
       ]
       description = "Data Space Used has exceeded 90 percent of max space.  Cleanup required or request additional space."
 
@@ -444,7 +444,7 @@ monitoring = {
 
       action = {
         action_group = {
-          id = "/subscriptions/D952B48A-3183-48CF-8A23-8C6F7F5A302F/resourceGroups/RG-ACDBA-PRD/providers/microsoft.insights/actionGroups/AG-DBA-Support"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/RG-ACDBA-PRD/providers/microsoft.insights/actionGroups/AG-DBA-Support"
         }
       }
       tags = {

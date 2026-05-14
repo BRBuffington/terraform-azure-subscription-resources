@@ -1,4 +1,4 @@
-subscription_id = "89d26d12-21e3-46a0-97ed-debf3ae13f7d" # IT-SharedServices-TST
+subscription_id = "00000000-0000-0000-0000-000000000000"
 
 vnets = {
   "vnet-aap-tst-cus" = {
@@ -34,8 +34,8 @@ vnets = {
 #### Monitoring Additions
 ##-------------------------------------
 azure_provider_monitoringstore = {
-  tenant_id              = "53f3dc0a-512f-4399-817d-c4a55242d086"
-  subscription_id        = "89d26d12-21e3-46a0-97ed-debf3ae13f7d" # IT-SharedServices-TST
+  tenant_id              = "00000000-0000-0000-0000-000000000000"
+  subscription_id        = "00000000-0000-0000-0000-000000000000"
   region_alias           = "eus2"
   region                 = "eastus2"
   environment_type_alias = "prd"

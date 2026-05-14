@@ -11,7 +11,7 @@ variable "tags" {
 variable "hub_subscription_id" {
   description = "Default subscription id of the hub. Important to note this affects all peering and routing for the config - DO NOT CHANGE on non-sandbox subscriptions"
   type        = string
-  default     = "b64b8a9d-f0a4-4e6a-8844-f0426e9b4fc2" # Connectivity
+  default     = "00000000-0000-0000-0000-000000000000" # Connectivity
 }
 
 variable "default_network_security_groups" {

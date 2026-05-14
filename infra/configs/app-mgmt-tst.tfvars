@@ -1,4 +1,4 @@
-subscription_id = "0ddd144b-76dd-4289-bd12-5ac7dad5d168" # Formerly, IT-ENTERPRISE-SHAREDSERVICES-SB
+subscription_id = "00000000-0000-0000-0000-000000000000"
 resource_groups = {
   rg-monitoringinfra-tst-eus2 = {
     location = "eastus2"
@@ -23,8 +23,8 @@ resource_groups = {
 #### Monitoring Additions
 ##-------------------------------------
 azure_provider_monitoringstore = {
-  tenant_id              = "53f3dc0a-512f-4399-817d-c4a55242d086"
-  subscription_id        = "0ddd144b-76dd-4289-bd12-5ac7dad5d168" #IT-MGMT-TST
+  tenant_id              = "00000000-0000-0000-0000-000000000000"
+  subscription_id        = "00000000-0000-0000-0000-000000000000"
   region_alias           = "eus2"
   region                 = "eastus2"
   environment_type_alias = "tst"
@@ -65,7 +65,7 @@ monitoring = {
     mag2 = {
       create_mag             = true
       action_group_name      = "metricalerts"
-      resource_group_name    = "rg-monitoringinfra-tst-eus2" #Pre-Req deployed with SubscriptionResources composition - IT-MGMT-TST workspace
+      resource_group_name    = "rg-monitoringinfra-tst-eus2" #Pre-Req deployed with SubscriptionResources composition - app-mgmt-tst workspace
       action_group_shortname = "inframetric"
 
       email_receiver = {
@@ -97,7 +97,7 @@ monitoring = {
       #mala_name           = "vm" #(Optional)This is a custom name that can append the dynamic Alert Rule Name
       resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with Subscription Resources composition
       scopes = [
-        "/subscriptions/0ddd144b-76dd-4289-bd12-5ac7dad5d168", #IT-MGMT-TST
+        "/subscriptions/00000000-0000-0000-0000-000000000000",
       ]
       description = "This alert will monitor resource health of all vms in target subscription."
 
@@ -138,7 +138,7 @@ monitoring = {
       #mala_name           = "db" #(Optional)This is a custom name that can append the dynamic Alert Rule Name
       resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with Subscription Resources composition
       scopes = [
-        "/subscriptions/0ddd144b-76dd-4289-bd12-5ac7dad5d168", #IT-MGMT-TST
+        "/subscriptions/00000000-0000-0000-0000-000000000000",
       ]
       description = "This alert will monitor resource health of all databases in target subscription."
 
@@ -179,7 +179,7 @@ monitoring = {
       mala_name           = "law"              #custom-name append as dynamic name is "workspaces", result will be law-workspaces
       resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with Subscription Resources composition
       scopes = [
-        "/subscriptions/0ddd144b-76dd-4289-bd12-5ac7dad5d168", #IT-MGMT-TST
+        "/subscriptions/00000000-0000-0000-0000-000000000000",
       ]
       description = "This alert will monitor resource health of all log analytics workspaces in target subscription."
 
@@ -220,7 +220,7 @@ monitoring = {
       #mala_name           = "svchealth-app-mgmt" #(Optional)This is a custom name that can append the dynamic Alert Rule Name
       resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with Subscription Resources composition
       scopes = [
-        "/subscriptions/0ddd144b-76dd-4289-bd12-5ac7dad5d168", #IT-MGMT-TST
+        "/subscriptions/00000000-0000-0000-0000-000000000000",
       ]
       description = "This alert will monitor service health of all resources in target subscriptions."
 
@@ -259,8 +259,8 @@ monitoring = {
       #mala_name           = "sa" #(Optional)This is a custom name that can append the dynamic Alert Rule Name
       resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with Subscription Resources composition
       scopes = [
-        "/subscriptions/0ddd144b-76dd-4289-bd12-5ac7dad5d168", #IT-MGMT-TST
-        #Single Resource Example "/subscriptions/0ddd144b-76dd-4289-bd12-5ac7dad5d168/resourceGroups/rg-azmontst-sb-eus2/providers/Microsoft.OperationalInsights/workspaces/law-example"
+        "/subscriptions/00000000-0000-0000-0000-000000000000",
+        #Single Resource Example "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-azmontst-sb-eus2/providers/Microsoft.OperationalInsights/workspaces/law-example"
       ]
       description = "This alert will monitor resource health of all log analytics workspaces in target subscription."
 
@@ -311,7 +311,7 @@ monitoring = {
       target_resource_type     = "Microsoft.Compute/virtualmachines"
       target_resource_location = "East US 2"
       scopes = [
-        "/subscriptions/0ddd144b-76dd-4289-bd12-5ac7dad5d168" #IT-MGMT-TST
+        "/subscriptions/00000000-0000-0000-0000-000000000000"
       ]
       description = "Action will be triggered when Percent CPU average is greater than 95 on VMs in target scope."
 

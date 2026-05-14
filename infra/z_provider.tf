@@ -17,21 +17,21 @@ terraform {
 
 provider "azurerm" {
   subscription_id = var.subscription_id
-  tenant_id       = "53f3dc0a-512f-4399-817d-c4a55242d086"
+  tenant_id       = "00000000-0000-0000-0000-000000000000"
   features {}
 }
 
 provider "azurerm" {
   alias           = "hub"
   subscription_id = var.hub_subscription_id
-  tenant_id       = "53f3dc0a-512f-4399-817d-c4a55242d086"
+  tenant_id       = "00000000-0000-0000-0000-000000000000"
   features {}
 }
 # The purpose of this provider is to connect to a subscription where storage of monitoring resources will be centralized
 provider "azurerm" {
   alias           = "monitoring"
   subscription_id = var.azure_provider_monitoringstore.subscription_id
-  tenant_id       = "53f3dc0a-512f-4399-817d-c4a55242d086"
+  tenant_id       = "00000000-0000-0000-0000-000000000000"
   features {}
 }
 

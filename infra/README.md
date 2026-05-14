@@ -41,7 +41,7 @@ NOTE:
 * Action groups for Infrastructure Email Alerts
   * It-mgmt-tst and app-mgmt-prd subscription monitoring deployments must be deployed first.  These subscriptions will contain the Infrastructure Monitoring action groups.
 * Resource groups "rg-monitoringinfra-tst-eus2","rg-monitoringinfra-prd-eus2", (in each subscription)"rg-inframon-eus2", and "rg-inframon-cus" must be pre-deployed to contain monitoring rules and action groups.
-* Action groups and Metrics alert rules will be centralized in IT-MGMT-PRD as much as possible.
+* Action groups and Metrics alert rules will be centralized in app-mgmt-prd as much as possible.
   
 ### Alert Rule Naming
 Metric Alert Rules and Activity Log Alert Rules are named dynamically based on the config requested as of terraform-azurerm-monitoring v3.0.0.
@@ -83,14 +83,14 @@ The following resource health alerts should be deployed in Subscriptions where t
 * Azure Data Factories (if deployed)
 
 ### Important Deployment Notes
-For all PRD/TST subscriptions, Alert Rules and Action groups are centralized in, and deployed to >> IT-MGMT-PRD subscription.  
-  * This is the reason an azure_provider_monitoringstore is defined > requires a connection to IT-MGMT-PRD at runtime to store alerts in this subscription.
+For all PRD/TST subscriptions, Alert Rules and Action groups are centralized in, and deployed to >> app-mgmt-prd subscription.  
+  * This is the reason an azure_provider_monitoringstore is defined > requires a connection to app-mgmt-prd at runtime to store alerts in this subscription.
 
-Key changes for a new Monitoring in PRD/TST Subscriptions (where target is not IT-MGMT-TST or IT-MGMT-PRD):
+Key changes for a new Monitoring in PRD/TST Subscriptions (where target is not app-mgmt-tst or app-mgmt-prd):
 #### Monitoring Provider
 * azure_provider_monitoringstore = {
-  tenant_id              = "53f3dc0a-512f-4399-817d-c4a55242d086"
-  subscription_id        = "d952b48a-3183-48cf-8a23-8c6f7f5a302f" #IT-MGMT-PRD
+  tenant_id              = "00000000-0000-0000-0000-000000000000"
+  subscription_id        = "00000000-0000-0000-0000-000000000000"
   region_alias           = "eus2"
   region                 = "eastus2"
   environment_type_alias = "prd"
@@ -102,18 +102,18 @@ Key changes for a new Monitoring in PRD/TST Subscriptions (where target is not I
 NOTE:  For application centric monitoring, this can be substituted for a central app solution store location(subscription) in app solution deployments.  This allows solution owners to centralize and manage their own alerts for the solution, as subject matter expierts, and app monitoring will share the lifecycle of the solution.
 #### Action Groups
 * For Infrastructure monitoring - 
-Action Groups use Resource ID rather than a key in MAG object, as they are pre-deployed in IT-MGMT-PRD
+Action Groups use Resource ID rather than a key in MAG object, as they are pre-deployed in app-mgmt-prd
   * For health Alerts 
   action = {
         action_group = {
-          id = "/subscriptions/d952b48a-3183-48cf-8a23-8c6f7f5a302f/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
         }
       }
   
   * For metric alerts
   action = {
         action_group = {
-          id = "/subscriptions/d952b48a-3183-48cf-8a23-8c6f7f5a302f/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-metricalerts-prd-eus2"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-metricalerts-prd-eus2"
         }
       }
 #### Resource Health per Resource Type
@@ -190,7 +190,7 @@ NOTE:  Removed it-syssvcs-test.tfvars from deployment
 | <a name="input_default_network_security_groups"></a> [default\_network\_security\_groups](#input\_default\_network\_security\_groups) | Map of NSGs that will be created by default in the subscription | `map` | <pre>{<br>  "nsg-default-cus": {<br>    "location": "centralus",<br>    "tags": {<br>      "EnvironmentType": "prd"<br>    }<br>  },<br>  "nsg-default-eus2": {<br>    "location": "eastus2",<br>    "tags": {<br>      "EnvironmentType": "prd"<br>    }<br>  }<br>}</pre> | no |
 | <a name="input_default_resource_groups"></a> [default\_resource\_groups](#input\_default\_resource\_groups) | Map of resource groups that will be created by default in the subscription | `map` | <pre>{<br>  "rg-inframon-cus": {<br>    "location": "centralus",<br>    "tags": {<br>      "EnvironmentType": "prd"<br>    }<br>  },<br>  "rg-inframon-eus2": {<br>    "location": "eastus2",<br>    "tags": {<br>      "EnvironmentType": "prd"<br>    }<br>  },<br>  "rg-network-cus": {<br>    "location": "centralus",<br>    "tags": {<br>      "EnvironmentType": "prd"<br>    }<br>  },<br>  "rg-network-eus2": {<br>    "location": "eastus2",<br>    "tags": {<br>      "EnvironmentType": "prd"<br>    }<br>  }<br>}</pre> | no |
 | <a name="input_default_route_tables"></a> [default\_route\_tables](#input\_default\_route\_tables) | Map of UDRs that will be created by default in the subscription. This does not generally need to be changed, unless you want to use the Hub SB"<br>  Hub Sandbox<pre>"udr-tohub-eus2" = {<br>    location = "eastus2"<br><br>    routes = {<br>        "DefaultGateway" = {<br>          address_prefix         = "0.0.0.0/0"<br>          next_hop_type          = "VirtualAppliance"<br>          next_hop_in_ip_address = "172.28.180.62"<br>        }<br>      }<br>    }<br><br>  "udr-tohub-cus" = {<br>      location = "centralus"<br><br>      routes = {<br>        "DefaultGateway" = {<br>          address_prefix         = "0.0.0.0/0"<br>          next_hop_type          = "VirtualAppliance"<br>          next_hop_in_ip_address = "172.28.181.62"<br>        }<br>      }<br>    }</pre> | `map` | <pre>{<br>  "udr-tohub-cus": {<br>    "location": "centralus",<br>    "routes": {<br>      "DefaultGateway": {<br>        "address_prefix": "0.0.0.0/0",<br>        "next_hop_in_ip_address": "172.28.129.62",<br>        "next_hop_type": "VirtualAppliance"<br>      }<br>    },<br>    "tags": {<br>      "EnvironmentType": "prd"<br>    }<br>  },<br>  "udr-tohub-eus2": {<br>    "location": "eastus2",<br>    "routes": {<br>      "DefaultGateway": {<br>        "address_prefix": "0.0.0.0/0",<br>        "next_hop_in_ip_address": "172.28.128.62",<br>        "next_hop_type": "VirtualAppliance"<br>      }<br>    },<br>    "tags": {<br>      "EnvironmentType": "prd"<br>    }<br>  }<br>}</pre> | no |
-| <a name="input_hub_subscription_id"></a> [hub\_subscription\_id](#input\_hub\_subscription\_id) | Default subscription id of the hub. Important to note this affects all peering and routing for the config - DO NOT CHANGE on non-sandbox subscriptions | `string` | `"b64b8a9d-f0a4-4e6a-8844-f0426e9b4fc2"` | no |
+| <a name="input_hub_subscription_id"></a> [hub\_subscription\_id](#input\_hub\_subscription\_id) | Default subscription id of the hub. Important to note this affects all peering and routing for the config - DO NOT CHANGE on non-sandbox subscriptions | `string` | `"00000000-0000-0000-0000-000000000000"` | no |
 | <a name="input_identity"></a> [identity](#input\_identity) | Configuration object - identity resources | `map` | `{}` | no |
 | <a name="input_logged_aad_app_objectId"></a> [logged\_aad\_app\_objectId](#input\_logged\_aad\_app\_objectId) | Used to set access policies based on the value 'logged\_in\_aad\_app' | `string` | `null` | no |
 | <a name="input_logged_user_objectId"></a> [logged\_user\_objectId](#input\_logged\_user\_objectId) | Used to set access policies based on the value 'logged\_in\_user'. Can only be used in interactive execution with vscode. | `string` | `null` | no |

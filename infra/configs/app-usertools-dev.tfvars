@@ -1,4 +1,4 @@
-subscription_id = "b45f83f4-580e-44a9-8920-472b57947693" # GI-MDM-UserTools-DEV
+subscription_id = "00000000-0000-0000-0000-000000000000" # GI-MDM-UserTools-DEV
 
 vnets = {
   "vnet-mdmutaks-si-cus" = {
@@ -190,8 +190,8 @@ route_tables = {
 #### Monitoring Additions
 ##-------------------------------------
 azure_provider_monitoringstore = {
-  tenant_id              = "53f3dc0a-512f-4399-817d-c4a55242d086"
-  subscription_id        = "b45f83f4-580e-44a9-8920-472b57947693" # GI-MDM-UserTools-DEV
+  tenant_id              = "00000000-0000-0000-0000-000000000000"
+  subscription_id        = "00000000-0000-0000-0000-000000000000" # GI-MDM-UserTools-DEV
   region_alias           = "eus2"
   region                 = "eastus2"
   environment_type_alias = "prd"

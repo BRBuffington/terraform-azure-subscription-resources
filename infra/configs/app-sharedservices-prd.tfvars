@@ -1,4 +1,4 @@
-subscription_id = "2f4d38ec-f2dc-45b5-aa12-6e7ff2c17e84" # IT-SharedServices-PRD
+subscription_id = "00000000-0000-0000-0000-000000000000"
 
 vnets = {
   "vnet-aap-prd-cus" = {
@@ -63,8 +63,8 @@ vnets = {
 #### Monitoring Additions
 ##-------------------------------------
 azure_provider_monitoringstore = {
-  tenant_id              = "53f3dc0a-512f-4399-817d-c4a55242d086"
-  subscription_id        = "2f4d38ec-f2dc-45b5-aa12-6e7ff2c17e84" # IT-SharedServices-PRD
+  tenant_id              = "00000000-0000-0000-0000-000000000000"
+  subscription_id        = "00000000-0000-0000-0000-000000000000"
   region_alias           = "eus2"
   region                 = "eastus2"
   environment_type_alias = "prd"
@@ -79,7 +79,7 @@ monitoring = {
       #mala_name           = "vm" #(Optional)This is a custom name that can append the dynamic Alert Rule Name
       resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with Subscription Resources composition
       scopes = [
-        "/subscriptions/2f4d38ec-f2dc-45b5-aa12-6e7ff2c17e84" # IT-SharedServices-PRD
+        "/subscriptions/00000000-0000-0000-0000-000000000000"
       ]
       description = "This alert will monitor resource health of all vms in target subscription."
 
@@ -106,7 +106,7 @@ monitoring = {
 
       action = {
         action_group = {
-          id = "/subscriptions/d952b48a-3183-48cf-8a23-8c6f7f5a302f/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
         }
       }
       tags = {
@@ -118,9 +118,9 @@ monitoring = {
     }
     mala02 = {
       #mala_name           = "db" #(Optional)This is a custom name that can append the dynamic Alert Rule Name
-      resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with SubscriptionResources composition - IT-MGMT-PRD workspace
+      resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with SubscriptionResources composition - app-mgmt-prd workspace
       scopes = [
-        "/subscriptions/2f4d38ec-f2dc-45b5-aa12-6e7ff2c17e84" # IT-SharedServices-PRD
+        "/subscriptions/00000000-0000-0000-0000-000000000000"
       ]
       description = "This alert will monitor resource health of all databases in target subscription."
 
@@ -147,7 +147,7 @@ monitoring = {
 
       action = {
         action_group = {
-          id = "/subscriptions/d952b48a-3183-48cf-8a23-8c6f7f5a302f/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
         }
       }
       tags = {
@@ -161,7 +161,7 @@ monitoring = {
       mala_name           = "law"              #(Optional)This is a custom name that can append the dynamic Alert Rule Name
       resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with Subscription Resources composition
       scopes = [
-        "/subscriptions/2f4d38ec-f2dc-45b5-aa12-6e7ff2c17e84" # IT-SharedServices-PRD
+        "/subscriptions/00000000-0000-0000-0000-000000000000"
       ]
       description = "This alert will monitor resource health of all log analytics workspaces in target subscription."
 
@@ -188,7 +188,7 @@ monitoring = {
 
       action = {
         action_group = {
-          id = "/subscriptions/d952b48a-3183-48cf-8a23-8c6f7f5a302f/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
         }
       }
       tags = {
@@ -202,8 +202,8 @@ monitoring = {
       #mala_name           = "sa" #(Optional)This is a custom name that can append the dynamic Alert Rule Name
       resource_group_name = "rg-inframon-eus2" #Pre-Req deployed with Subscription Resources composition
       scopes = [
-        "/subscriptions/2f4d38ec-f2dc-45b5-aa12-6e7ff2c17e84" # IT-SharedServices-PRD
-        #Single Resource Example "/subscriptions/0ddd144b-76dd-4289-bd12-5ac7dad5d168/resourceGroups/rg-azmontst-sb-eus2/providers/Microsoft.OperationalInsights/workspaces/law-example"
+        "/subscriptions/00000000-0000-0000-0000-000000000000"
+        #Single Resource Example "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-azmontst-sb-eus2/providers/Microsoft.OperationalInsights/workspaces/law-example"
       ]
       description = "This alert will monitor resource health of all log analytics workspaces in target subscription."
 
@@ -230,7 +230,7 @@ monitoring = {
 
       action = {
         action_group = {
-          id = "/subscriptions/d952b48a-3183-48cf-8a23-8c6f7f5a302f/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-healthalerts-prd-eus2"
         }
       }
       tags = {
@@ -254,7 +254,7 @@ monitoring = {
       target_resource_type     = "Microsoft.Compute/virtualmachines"
       target_resource_location = "East US 2"
       scopes = [
-        "/subscriptions/2f4d38ec-f2dc-45b5-aa12-6e7ff2c17e84" #IT-SHAREDSERVICES-PRD
+        "/subscriptions/00000000-0000-0000-0000-000000000000"
       ]
       description = "Action will be triggered when Percent CPU average is greater than 95 on VMs in target scope."
 
@@ -274,7 +274,7 @@ monitoring = {
 
       action = {
         action_group = {
-          id = "/subscriptions/d952b48a-3183-48cf-8a23-8c6f7f5a302f/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-metricalerts-prd-eus2"
+          id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-monitoringinfra-prd-eus2/providers/Microsoft.Insights/actiongroups/mag-infra-metricalerts-prd-eus2"
         }
       }
       tags = {

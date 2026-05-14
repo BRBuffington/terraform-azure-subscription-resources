@@ -20,7 +20,7 @@ resource "null_resource" "network_watcher" {
 
       # If not logged in, use the SP
       if ($LastExitCode -ne 0) {
-        az login --service-principal -u $ENV:ARM_CLIENT_ID -p $ENV:ARM_CLIENT_SECRET --tenant 53f3dc0a-512f-4399-817d-c4a55242d086
+        az login --service-principal -u $ENV:ARM_CLIENT_ID -p $ENV:ARM_CLIENT_SECRET --tenant 00000000-0000-0000-0000-000000000000
       }
 
       # Set the az context to the subscription

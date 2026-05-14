@@ -1,10 +1,10 @@
 # Default LAW
 target_log_analytics_workspace = {
-  subscription_id = "d952b48a-3183-48cf-8a23-8c6f7f5a302f"
+  subscription_id = "00000000-0000-0000-0000-000000000000"
   rg              = "rg-mgmt-prd-eus02"
   name            = "law-default-eus02"
   region          = "eastus2"
-  customer_id     = "3bc6a63c-bae8-4ead-b2df-194c561e366f"
+  customer_id     = "00000000-0000-0000-0000-000000000000"
 }
 
 monitoring_solution_data = {
